@@ -1,6 +1,6 @@
 package sample
 
-import code.chymyst.jc._
+import io.chymyst.jc._
 
 object HelloWorldChymyst extends App {
   // Define a function that starts some reactions, then call that function.
