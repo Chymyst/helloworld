@@ -4,7 +4,7 @@ This project shows a minimal "hello, world" Chymyst application.
 
 The code defines a reaction that prints a message (asynchronously) and returns a status value through a blocking molecule.
 
-The project depends on [`Chymyst Core`](https://github.com/Chymyst/joinrun-scala).
+The project depends on [`Chymyst Core`](https://github.com/Chymyst/chymyst-core).
 
 ## Compile
 
