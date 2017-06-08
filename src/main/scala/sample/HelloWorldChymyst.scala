@@ -10,7 +10,7 @@ object HelloWorldChymyst extends App {
     val get_status = b[Unit, Boolean]
 
     site(
-      go { case a(message) + get_status(_, reply) => println(message); reply(true) }
+      go { case a(message) + get_status(_, reply) ⇒ println(message); reply(true) }
     )
 
     a("Hello, Chymyst lab!")
