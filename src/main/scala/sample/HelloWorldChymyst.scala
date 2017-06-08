@@ -3,20 +3,13 @@ package sample
 import io.chymyst.jc._
 
 object HelloWorldChymyst extends App {
-  // Define a function that starts some reactions, then call that function.
+  val a = m[String]
+  val get_status = b[Unit, Boolean]
 
-  def startReactions(): Boolean = {
-    val a = m[String]
-    val get_status = b[Unit, Boolean]
+  site(
+    go { case a(message) + get_status(_, reply) ⇒ println(message); reply(true) }
+  )
 
-    site(
-      go { case a(message) + get_status(_, reply) ⇒ println(message); reply(true) }
-    )
-
-    a("Hello, Chymyst lab!")
-    val status: Boolean = get_status()
-    status
-  }
-
-  startReactions()
+  a("Hello, Chymyst lab!")
+  get_status() // run reaction and obtain `true` status
 }
