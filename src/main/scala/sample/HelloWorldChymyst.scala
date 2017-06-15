@@ -4,12 +4,16 @@ import io.chymyst.jc._
 
 object HelloWorldChymyst extends App {
   val a = m[String]
-  val get_status = b[Unit, Boolean]
+  val get_value = b[Unit, Int]
 
   site(
-    go { case a(message) + get_status(_, reply) ⇒ println(message); reply(true) }
+    go { case a(message) + get_value(_, reply) ⇒
+      reply(123)
+      println(message)
+    }
   )
 
   a("Hello, Chymyst lab!")
-  get_status() // run reaction and obtain `true` status
+
+  val result = get_value() // run reaction and obtain result as the reply value
 }
